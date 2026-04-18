@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "../utils/auth";
 
 const api = axios.create({
-  baseURL: "https://lms-project-mqui.onrender.com",
+  baseURL: "https://lms-project-mqui.onrender.com/api",
   timeout: 15000,
 });
 
