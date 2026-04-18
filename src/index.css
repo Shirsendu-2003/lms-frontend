@@ -1,13 +1,214 @@
+/* =====================
+   RESET & BASE STYLES
+===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8fafc; /* light neutral */
+  color: #0f172a; /* slate-900 */
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* =====================
+   TYPOGRAPHY
+===================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+p {
+  margin: 0;
+  color: #334155; /* slate-600 */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* =====================
+   APP WRAPPER
+===================== */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================
+   ANIMATIONS (POLITE)
+===================== */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    animation: fadeIn 0.6s ease-in-out both;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   UTILITY CLASSES
+===================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+/* =====================
+   RESPONSIVE BREAKPOINTS
+===================== */
+
+/* 📱 Mobile (default) */
+/* already optimized */
+
+/* 📱 Small phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* 📲 Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* 💻 Laptop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+}
+
+/* 🖥️ Large Desktop */
+@media (min-width: 1441px) {
+  body {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h2 {
+    font-size: 2.1rem;
+  }
+}
+
+/* =====================
+   FORM ELEMENTS
+===================== */
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* =====================
+   SCROLLBAR (DESKTOP)
+===================== */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5f5;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+/* =====================
+   CODE BLOCKS (OPTIONAL)
+===================== */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.85rem;
 }
